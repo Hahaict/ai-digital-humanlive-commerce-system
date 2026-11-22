@@ -56,7 +56,7 @@ const translations = {
       badge: "保健品·美妝·特色小店合規專用 AI 真實數字人直播引擎",
       title1: "全天候 24/7 智能直播",
       title2: "合規無憂 驅動電商高倍轉化",
-      desc: "專為保健營養品、美妝護膚及在地特色小店打造。結合超逼真「True Characters」數字人人設、即時語氣控場與嚴格的保健/美妝廣告法及社群公約敏感詞、不雅用語即時監測改寫，協助品牌與商家零違規風險開播。",
+      desc: "專為保健營養品、美妝護膚及在地特色小店打造。結合超逼真數字人人設、即時語氣控場與嚴格的保健/美妝廣告法及社群公約敏感詞、不雅用語即時監測改寫，協助品牌與商家零違規風險開播。",
       ctaPrimary: "進入合規檢測台",
       ctaSecondary: "體驗數字人直播間",
       stat1: "違規率降低",
@@ -69,7 +69,7 @@ const translations = {
       stat4Val: "150,000+ 小時"
     },
     presenters: {
-      title: "真實數字人角色庫 (True Characters)",
+      title: "真實數字人角色庫",
       subtitle: "涵蓋資深營養保健顧問、美妝護膚達人與特色小店選品主理人，精準匹配多元商品",
       select: "選擇此角色開播",
       selected: "當前直播選中角色",
@@ -177,7 +177,7 @@ const translations = {
       stat4Val: "150,000+"
     },
     presenters: {
-      title: "Digital Human Presenters (True Characters)",
+      title: "Digital Human Presenters",
       subtitle: "Featuring Wellness Consultants, Beauty Specialists, and Artisan Storytellers.",
       select: "Select for Streaming",
       selected: "Currently Active Avatar",
@@ -1199,7 +1199,7 @@ export default function App() {
                 <div className="bg-slate-950 p-4 rounded-2xl border border-slate-850 space-y-2 relative">
                   <span className="text-xs font-bold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg border border-indigo-500/20 inline-block">Step 1</span>
                   <h4 className="font-bold text-sm text-white">{lang === 'zh' ? '選定數字人與商品' : 'Select Avatar & Item'}</h4>
-                  <p className="text-xs text-slate-400">{lang === 'zh' ? '由角色庫匹配最佳營養師、美妝師或小店主理人' : 'Bind suitable True Character avatar and pinned product'}</p>
+                  <p className="text-xs text-slate-400">{lang === 'zh' ? '由角色庫匹配最佳營養師、美妝師或小店主理人' : 'Bind suitable Digital Human avatar and pinned product'}</p>
                 </div>
 
                 <div className="bg-slate-950 p-4 rounded-2xl border border-slate-850 space-y-2 relative">
@@ -1477,7 +1477,7 @@ export default function App() {
                         <div className="absolute top-3 left-3 flex items-center gap-2">
                           <span className="bg-slate-950/80 backdrop-blur text-indigo-300 text-[10px] px-2.5 py-1 rounded-full border border-indigo-500/30 font-semibold flex items-center gap-1">
                             <Sparkles className="w-3 h-3 text-indigo-400" />
-                            True Character
+                            AI Digital Human
                           </span>
                         </div>
 
