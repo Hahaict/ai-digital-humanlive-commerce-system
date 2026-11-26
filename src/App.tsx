@@ -954,6 +954,15 @@ export default function App() {
           <button onClick={() => setActiveTab('catalog')} className={`px-3 py-1.5 rounded-md whitespace-nowrap ${activeTab === 'catalog' ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}>{t.nav.catalog}</button>
           <button onClick={() => setActiveTab('presenters')} className={`px-3 py-1.5 rounded-md whitespace-nowrap ${activeTab === 'presenters' ? 'bg-indigo-600 text-white' : 'text-slate-400'}`}>{t.nav.presenters}</button>
           <button onClick={() => setActiveTab('liveroom')} className={`px-3 py-1.5 rounded-md whitespace-nowrap ${activeTab === 'liveroom' ? 'bg-rose-600 text-white' : 'text-slate-400'}`}>{t.nav.liveroom}</button>
+          <button onClick={() => setActiveTab('crisis-drill')}
+          className={`px-3 py-1.5 rounded-md whitespace-nowrap ${
+    activeTab === 'crisis-drill'
+      ? 'bg-amber-600 text-white font-medium'
+      : 'text-slate-400 hover:text-white'
+  }`}
+>
+  {t.nav.crisisDrill || '危機預演'}
+</button>
           <button onClick={() => setActiveTab('admin-compliance')} className={`px-3 py-1.5 rounded-md whitespace-nowrap ${activeTab.startsWith('admin') ? 'bg-emerald-600 text-white' : 'text-slate-400'}`}>{t.nav.adminCompliance}</button>
         </div>
       </header>
