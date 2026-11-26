@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { CrisisDrillModule } from './CrisisDrillModule';
 import React, { useState, useEffect } from 'react';
 import {
   ShieldCheck,
@@ -50,7 +51,8 @@ const translations = {
       adminLogs: "合規審計日誌",
       lang: "English",
       cart: "購物車",
-      startLive: "開啟數字人直播"
+      startLive: "開啟數字人直播",
+      crisisDrill: "危機預演"
     },
     hero: {
       badge: "保健品·美妝·特色小店合規專用 AI 真實數字人直播引擎",
@@ -158,7 +160,8 @@ const translations = {
       adminLogs: "Audit Logs",
       lang: "繁體中文",
       cart: "Cart",
-      startLive: "Start AI Live Stream"
+      startLive: "Start AI Live Stream",
+      crisisDrill: "Crisis Drill"
     },
     hero: {
       badge: "AI Digital Human Live Engine for Supplements, Cosmetics & Local Artisans",
@@ -884,6 +887,17 @@ export default function App() {
               {t.nav.liveroom}
             </button>
             
+            <button
+            onClick={() => setActiveTab('crisis-drill')}
+            className={`px-3.5 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-1.5 ${
+              activeTab === 'crisis-drill'
+                ? 'bg-amber-600 text-white shadow-md shadow-amber-600/20'
+                : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+            }`}
+          >
+            {t.nav.crisisDrill || '危機預演'}
+          </button>
+
             <div className="h-4 w-[1px] bg-slate-800 mx-1" />
 
             {/* Admin Console Direct Nav */}
@@ -1310,6 +1324,13 @@ export default function App() {
                           src={prod.image}
                           alt={prod.nameZh}
                           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                          onError={(e) => {
+                            const img = e.currentTarget;
+                            if (!img.dataset.fallbackApplied) {
+                              img.dataset.fallbackApplied = 'true';
+                              img.src = 'https://placehold.co/600x400/1e293b/94a3b8?text=Product+Preview';
+                            }
+                          }}
                         />
                         <div className="absolute top-2 left-2 flex items-center gap-1.5">
                           <span className="bg-slate-900/90 text-slate-300 text-[10px] px-2 py-1 rounded-md font-semibold border border-slate-700">
@@ -1565,6 +1586,13 @@ export default function App() {
               })}
             </div>
           </div>
+        )}
+
+{/* ============================================================ */}
+        {/* VIEW 4.5: AI CRISIS DRILL / STRESS TEST                      */}
+        {/* ============================================================ */}
+        {activeTab === 'crisis-drill' && (
+          <CrisisDrillModule presenters={[]} products={[]} />
         )}
 
         {/* ========================================= */}
